@@ -15,4 +15,4 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: cd /root/sanajay/fe-docker && git pull && ./deploy.sh
-          
+            
