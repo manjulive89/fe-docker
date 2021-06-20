@@ -17,4 +17,4 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         run: |
-                sh ./root/sanajay/fe-docker/deploy.sh
+                sh ./root/deploy.sh
