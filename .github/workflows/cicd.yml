@@ -14,5 +14,6 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          script: cd /root/sanajay/fe-docker && git pull && ./deploy.sh
+          port: ${{ secrets.PORT }}
+          script: cd /root/sanajay/fe-docker && ./deploy.sh
             
