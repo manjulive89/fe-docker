@@ -1,4 +1,4 @@
-name: Remote Deploy
+name: Remote Deploy on Push
 on: [push]
 jobs:
 
