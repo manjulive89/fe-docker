@@ -12,4 +12,5 @@ jobs:
            username: ${{ secrets.SERVER_USERNAME }}
            password: ${{ secrets.SERVER_PASSWORD }}
            port: ${{ secrets.PORT }}
-           script: sh /root/deploy.sh
+           run: | 
+               sh ./root/deploy.sh
