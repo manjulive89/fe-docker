@@ -1,0 +1,33 @@
+name: MasterCI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Deploy
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Bucket actions
+        uses: actions/setup-node@v1
+        with:
+          node-version: 8
+      - run: npm i
+      - run: npm run test
+      - run: npm run generate
+	  
+      
+      - name: Publish
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: ./dist/*
+          host: ${{ secrets.SERVER_IP}}
+          remote: ${{ secrets.SERVER_DIR }}
+          port: ${{ secrets.SERVER_PORT }}
+          user: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_PASSWORD }}
