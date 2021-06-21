@@ -1,15 +1,16 @@
-name: test
+name: remote ssh command
 on: [push]
 jobs:
-   build:
-     name: Build
-     runs-on: ubuntu-latest
-     steps:
-       - name: execute remot script
-         uses: manjulive89/fe-docker@master
-         with:
-           host: "45.63.88.234"
-           username: "root"
-           password: "j#M9eA*scB7[D9a6"
-           port: "22"
-           run: ls
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        password: ${{ secrets.SERVER_PASSWORD }}
+        port: ${{ secrets.SERVER_PORT }}
+        script: whoami
