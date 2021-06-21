@@ -20,10 +20,9 @@ jobs:
       - run: npm i
       - run: npm run test
       - run: npm run generate
-	  
       
       - name: Publish
-        uses: nogsantos/scp-deploy@master
+        uses: manjulive89/fe-docker@master
         with:
           src: ./dist/*
           host: ${{ secrets.SERVER_IP}}
