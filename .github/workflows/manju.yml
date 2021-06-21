@@ -8,9 +8,8 @@ jobs:
        - name: execute remot script
          uses: manjulive89/fe-docker@master
          with:
-           host: ${{ secrets.SERVER_IP }}
-           username: ${{ secrets.SERVER_USERNAME }}
-           password: ${{ secrets.SERVER_PASSWORD }}
-           port: ${{ secrets.PORT }}
-           run: | 
-               sh ./root/deploy.sh
+           host: "45.63.88.234"
+           username: "root"
+           password: "j#M9eA*scB7[D9a6"
+           port: "22"
+           run: ls
